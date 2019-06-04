@@ -67,19 +67,16 @@ void Adafruit_SSD1306::begin(uint8_t vccstate, uint8_t orentation)
     command(SSD1306_MEMORYMODE);
     command(0x00);                                  // 0x0 act like ks0108
 
-	/* Contorls flro flipping deisplay */
-	/*	
-		FLIPPED 180
-		command(SSD1306_SEGREMAP);
-		command(SSD1306_COMSCANINC);
-		
-		NORAML MODE
+	if(orentation == 0){
+		//NORAML MODE
 		command(SSD1306_SEGREMAP | 0x1);
 		command(SSD1306_COMSCANDEC);
-	*/	
-	command(SSD1306_SEGREMAP);
-	command(SSD1306_COMSCANINC);
-	/*END DISPLAY FLIP*/
+	} else {
+		//FLIPPED 180
+		command(SSD1306_SEGREMAP);
+		command(SSD1306_COMSCANINC);
+	}
+	
 
     command(SSD1306_SETCOMPINS);
     command(_rawHeight == 32 ? 0x02 : 0x12);        // TODO - calculate based on _rawHieght ?
