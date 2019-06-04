@@ -12,7 +12,7 @@ Initializes the OLED display.
 Sets up the OLED display and prepares it for use by the micro:bit.
 
 ```sig
-OLED.init(64, 128);
+OLED.init(64, 128, 0);
 ```
 
 This block must be placed before any of the ``show`` blocks.

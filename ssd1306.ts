@@ -92,6 +92,4 @@ namespace OLED {
         console.log("display: " + number);
         return;
     }
-
-
 }
