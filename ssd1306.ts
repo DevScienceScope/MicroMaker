@@ -5,10 +5,11 @@ namespace OLED {
      * initialises the i2c OLED display
      * @param height height (in pixels), eg: 64
      * @param width width (in pixels), eg: 128
+	 * @param orentation orentation (0 or 1), eg: 0
      */
     //% blockId=oled_init_terminal
     //% weight=100
-    //% block="initialize OLED with height %height|width %width"
+    //% block="initialize OLED with height %height|width %width|orentation %orentation"
     //% icon="\uf1ec" 
     //% shim=OLED::init_terminal
     export function init(height: number, width: number, orentation: number): void {
