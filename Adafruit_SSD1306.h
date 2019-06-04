@@ -58,7 +58,6 @@ public:
 		: Adafruit_GFX(rawWidth,rawHeight)
 	{
 		buffer.resize(rawHeight * rawWidth / 8);
-		set_orentation = orentation;
 	};
 
 	void begin(uint8_t switchvcc = SSD1306_SWITCHCAPVCC);
