@@ -46,8 +46,6 @@ public:
 #define SSD1306_COLUMNADDR 0x21
 #define SSD1306_PAGEADDR 0x22
 
-int set_orentation = 0;
-
 /** The pure base class for the SSD1306 display driver.
  *
  * You should derive from this for a new transport interface type,
@@ -56,13 +54,16 @@ int set_orentation = 0;
 class Adafruit_SSD1306 : public Adafruit_GFX
 {
 public:
+
+	int set_orentation = 0;
+
 	Adafruit_SSD1306(uint8_t rawHeight = 32, uint8_t rawWidth = 128 , int rawOrentation = 0)
 		: Adafruit_GFX(rawWidth,rawHeight)
 	{
 		buffer.resize(rawHeight * rawWidth / 8);
 	};
 
-	void begin(uint8_t switchvcc = SSD1306_SWITCHCAPVCC, int orentation = set_orentation);
+	void begin(uint8_t switchvcc = SSD1306_SWITCHCAPVCC);
 	
 	// These must be implemented in the derived transport driver
 	virtual void command(uint8_t c) = 0;
