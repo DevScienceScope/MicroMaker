@@ -103,7 +103,7 @@ public:
 	 * @param rawHeight - The vertical number of pixels for the display, defaults to 32
 	 * @param rawWidth - The horizonal number of pixels for the display, defaults to 128
 	 */
-	Adafruit_SSD1306_I2c(MicroBitI2C i2c, uint8_t i2cAddress = SSD_I2C_ADDRESS, uint8_t rawHeight = 32, uint8_t rawWidth = 128, int orentation = 0)
+	Adafruit_SSD1306_I2c(MicroBitI2C i2c, uint8_t i2cAddress = SSD_I2C_ADDRESS, uint8_t rawHeight = 32, uint8_t rawWidth = 128, int orentation)
 	    : Adafruit_SSD1306(rawHeight, rawWidth)
 	    , mi2c(i2c)
 	    , mi2cAddress(i2cAddress)
