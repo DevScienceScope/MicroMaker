@@ -60,7 +60,7 @@ public:
 		buffer.resize(rawHeight * rawWidth / 8);
 	};
 
-	void begin(uint8_t switchvcc = SSD1306_SWITCHCAPVCC, int orentation);
+	void begin(uint8_t switchvcc = SSD1306_SWITCHCAPVCC, int orentation = 0);
 	
 	// These must be implemented in the derived transport driver
 	virtual void command(uint8_t c) = 0;
