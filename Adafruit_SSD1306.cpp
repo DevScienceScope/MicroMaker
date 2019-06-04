@@ -45,7 +45,7 @@ All text above, and the splash screen below must be included in any redistributi
 #define SSD1306_SEGREMAP 0xA0
 #define SSD1306_CHARGEPUMP 0x8D
 
-void Adafruit_SSD1306::begin(uint8_t vccstate, uint8_t orentation)
+void Adafruit_SSD1306::begin(uint8_t vccstate, int orentation)
 {
     // turn on VCC (9V?)
 
