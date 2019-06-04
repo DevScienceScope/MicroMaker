@@ -54,10 +54,11 @@ public:
 class Adafruit_SSD1306 : public Adafruit_GFX
 {
 public:
-	Adafruit_SSD1306(uint8_t rawHeight = 32, uint8_t rawWidth = 128 , int orentation = 0)
+	Adafruit_SSD1306(uint8_t rawHeight = 32, uint8_t rawWidth = 128 , int orentation)
 		: Adafruit_GFX(rawWidth,rawHeight)
 	{
 		buffer.resize(rawHeight * rawWidth / 8);
+		set_orentation = orentation;
 	};
 
 	void begin(uint8_t switchvcc = SSD1306_SWITCHCAPVCC, int orentation = 0);
@@ -76,6 +77,8 @@ public:
 	void display();
 	/// Fill the buffer with the AdaFruit splash screen.
 	virtual void splash();
+	
+	int set_orentation = 0;
     
 protected:
 	virtual void sendDisplayBuffer() = 0;
