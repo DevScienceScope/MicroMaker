@@ -54,7 +54,7 @@ public:
 class Adafruit_SSD1306 : public Adafruit_GFX
 {
 public:
-	Adafruit_SSD1306(uint8_t rawHeight = 32, uint8_t rawWidth = 128 , int rawOrentation)
+	Adafruit_SSD1306(uint8_t rawHeight = 32, uint8_t rawWidth = 128 , int rawOrentation = 0)
 		: Adafruit_GFX(rawWidth,rawHeight)
 	{
 		buffer.resize(rawHeight * rawWidth / 8);
