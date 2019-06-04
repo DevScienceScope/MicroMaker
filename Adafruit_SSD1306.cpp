@@ -45,7 +45,7 @@ All text above, and the splash screen below must be included in any redistributi
 #define SSD1306_SEGREMAP 0xA0
 #define SSD1306_CHARGEPUMP 0x8D
 
-void Adafruit_SSD1306::begin(uint8_t vccstate, int orentation)
+void Adafruit_SSD1306::begin(uint8_t vccstate)
 {
     // turn on VCC (9V?)
 
@@ -67,6 +67,7 @@ void Adafruit_SSD1306::begin(uint8_t vccstate, int orentation)
     command(SSD1306_MEMORYMODE);
     command(0x00);                                  // 0x0 act like ks0108
 
+	/*
 	if(orentation == 0){
 		//NORAML MODE
 		command(SSD1306_SEGREMAP | 0x1);
@@ -76,6 +77,10 @@ void Adafruit_SSD1306::begin(uint8_t vccstate, int orentation)
 		command(SSD1306_SEGREMAP);
 		command(SSD1306_COMSCANINC);
 	}
+	*/
+	//NORAML MODE
+	command(SSD1306_SEGREMAP | 0x1);
+	command(SSD1306_COMSCANDEC);
 	
 
     command(SSD1306_SETCOMPINS);

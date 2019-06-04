@@ -61,7 +61,7 @@ public:
 		set_orentation = orentation;
 	};
 
-	void begin(uint8_t switchvcc = SSD1306_SWITCHCAPVCC, int orentation = 0);
+	void begin(uint8_t switchvcc = SSD1306_SWITCHCAPVCC);
 	
 	// These must be implemented in the derived transport driver
 	virtual void command(uint8_t c) = 0;
@@ -77,8 +77,6 @@ public:
 	void display();
 	/// Fill the buffer with the AdaFruit splash screen.
 	virtual void splash();
-	
-	int set_orentation = 0;
     
 protected:
 	virtual void sendDisplayBuffer() = 0;
@@ -95,6 +93,7 @@ class Adafruit_SSD1306_I2c : public Adafruit_SSD1306
 {
 public:
 	#define SSD_I2C_ADDRESS     0x78
+	int set_orentation = 0;
 	/** Create a SSD1306 I2C transport display driver instance with the specified I2C address, as well as the display dimensions
 	 *
 	 * Required parameters
@@ -105,11 +104,12 @@ public:
 	 * @param rawHeight - The vertical number of pixels for the display, defaults to 32
 	 * @param rawWidth - The horizonal number of pixels for the display, defaults to 128
 	 */
-	Adafruit_SSD1306_I2c(MicroBitI2C i2c, uint8_t i2cAddress = SSD_I2C_ADDRESS, uint8_t rawHeight = 32, uint8_t rawWidth = 128, int orentation = 0)
+	Adafruit_SSD1306_I2c(MicroBitI2C i2c, uint8_t i2cAddress = SSD_I2C_ADDRESS, uint8_t rawHeight = 32, uint8_t rawWidth = 128, int orentation)
 	    : Adafruit_SSD1306(rawHeight, rawWidth)
 	    , mi2c(i2c)
 	    , mi2cAddress(i2cAddress)
 	    {
+			set_orentation = orentation;
 		    begin();
 		    //splash();
 		    display();
