@@ -45,51 +45,6 @@ All text above, and the splash screen below must be included in any redistributi
 #define SSD1306_SEGREMAP 0xA0
 #define SSD1306_CHARGEPUMP 0x8D
 
-void Adafruit_SSD1306::beginFlip(uint8_t vccstate)
-{
-    // turn on VCC (9V?)
-
-    command(SSD1306_DISPLAYOFF);
-    command(SSD1306_SETDISPLAYCLOCKDIV);
-    command(0x80);                                  // the suggested ratio 0x80
-
-    command(SSD1306_SETMULTIPLEX);
-    command(_rawHeight-1);
-
-    command(SSD1306_SETDISPLAYOFFSET);
-    command(0x0);                                   // no offset
-
-    command(SSD1306_SETSTARTLINE | 0x0);            // line #0
-
-    command(SSD1306_CHARGEPUMP);
-    command((vccstate == SSD1306_EXTERNALVCC) ? 0x10 : 0x14);
-
-    command(SSD1306_MEMORYMODE);
-    command(0x00);                                  // 0x0 act like ks0108
-
-	//FLIPPED 180
-	command(SSD1306_SEGREMAP);
-	command(SSD1306_COMSCANINC);	
-
-    command(SSD1306_SETCOMPINS);
-    command(_rawHeight == 32 ? 0x02 : 0x12);        // TODO - calculate based on _rawHieght ?
-
-    command(SSD1306_SETCONTRAST);
-    command(_rawHeight == 32 ? 0x8F : ((vccstate == SSD1306_EXTERNALVCC) ? 0x9F : 0xCF) );
-
-    command(SSD1306_SETPRECHARGE);
-    command((vccstate == SSD1306_EXTERNALVCC) ? 0x22 : 0xF1);
-
-    command(SSD1306_SETVCOMDETECT);
-    command(0x40);
-
-    command(SSD1306_DISPLAYALLON_RESUME);
-
-    command(SSD1306_NORMALDISPLAY);
-    
-    command(SSD1306_DISPLAYON);
-}
-
 void Adafruit_SSD1306::begin(uint8_t vccstate)
 {
     // turn on VCC (9V?)
