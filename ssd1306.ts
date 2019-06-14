@@ -25,7 +25,7 @@ namespace MicroMaker {
     //% async
     //% shim=OLED::NextLine
     //% subcategory=Innovation
-    //% subcategory=Innovation
+    //% subcategory=Investigation
     export function nextLine(): void {
         return;
     }
