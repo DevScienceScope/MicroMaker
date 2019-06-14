@@ -13,6 +13,7 @@ namespace MicroMaker {
     //% icon="\uf1ec" 
     //% shim=OLED::init_terminal
 	//% subcategory=Innovation
+	//% //% group="OLED"
     export function init(height: number, width: number, orentation: number): void {
         return;
     }
@@ -26,6 +27,7 @@ namespace MicroMaker {
     //% shim=OLED::NextLine
     //% subcategory=Innovation
     //% subcategory=Investigation
+    //% group="OLED"
     export function nextLine(): void {
         return;
     }
