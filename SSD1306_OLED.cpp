@@ -18,10 +18,20 @@ namespace OLED {
 		oled->display();
 	}
 	
+	
 	//%
 	void init_terminal(int height, int width){
 		if (oled != NULL) delete oled;
 		oled = new Adafruit_SSD1306_I2c(i2c, SSD1306_ADDRESS, height, width);
+		oled->clearDisplay();
+		oled->display();
+		oled->setTextCursor(0, 0);
+	}
+	
+	//%
+	void init_terminal_flipped(int height, int width){
+		if (oled != NULL) delete oled;
+		oled = new Adafruit_SSD1306_I2c(i2c, SSD1306_ADDRESS, height, width, 1);
 		oled->clearDisplay();
 		oled->display();
 		oled->setTextCursor(0, 0);
