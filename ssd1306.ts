@@ -33,6 +33,7 @@ namespace MicroMaker {
     export function nextLine(): void {
         return;
     }
+	
 /**
      * clears the screen.
      */
