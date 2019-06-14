@@ -12,13 +12,11 @@ namespace MicroMaker {
     //% block="initialize OLED with height %height|width %width|orentation %orentation"
     //% icon="\uf1ec" 
     //% shim=OLED::init_terminal
-	//% subcategory=Innovation
-	//% subcategory=Foundation
+	//% subcategory=Innovation Foundation
 	//% group="OLED"
     export function init(height: number, width: number, orentation: number): void {
         return;
     }
-
     /**
      *Prints Next Line
      */
@@ -32,8 +30,7 @@ namespace MicroMaker {
     export function nextLine(): void {
         return;
     }
-
-    /**
+/**
      * clears the screen.
      */
     //% blockId=oled_clear_screen
@@ -74,7 +71,6 @@ namespace MicroMaker {
         console.log("display: " + text);
         return;
     }
-
     /**
      * prints a number on the OLED display without a newline
      * @param number number to display 
