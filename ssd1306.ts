@@ -1,8 +1,5 @@
 //% color=#27b0ba weight=100 icon="\uf26c"
 namespace MicroMaker {
-	
-	
-
    /**
      * initialises the i2c OLED display
      * @param height height (in pixels), eg: 64
@@ -14,8 +11,7 @@ namespace MicroMaker {
     //% block="initialize OLED with height %height|width %width|orentation %orentation"
     //% icon="\uf1ec" 
     //% shim=OLED::init_terminal
-	//% subcategory=Innovation
-	//% group="OLED"
+	//% subcategory=OLED
     export function init(height: number, width: number): void {
         return;
     }
@@ -26,8 +22,7 @@ namespace MicroMaker {
     //% block="insert newline"
     //% async
     //% shim=OLED::NextLine
-    //% subcategory=Innovation
-    //% group="OLED"
+    //% subcategory=OLED
     export function nextLine(): void {
         return;
     }
@@ -38,7 +33,7 @@ namespace MicroMaker {
     //% block="clear OLED display"
     //% icon="\uf1ec" 
     //% shim=OLED::clearDisplay
-	//% subcategory=Innovation
+	//% subcategory=OLED
     export function clear(): void {
         return;
     }
@@ -52,7 +47,7 @@ namespace MicroMaker {
      //% blockId=oled_print_stringNoNewLine
      //% icon="\uf1ec"
      //% shim=OLED::showStringNoNewLine
-	 //% subcategory=Innovation
+	 //% subcategory=OLED
      export function showStringNoNewLine(text: string): void {
         console.log("display: " + text);
         return;
@@ -67,7 +62,7 @@ namespace MicroMaker {
      //% blockId=oled_print_stringWithNewLine
      //% icon="\uf1ec"
      //% shim=OLED::showStringWithNewLine
-	 //% subcategory=Innovation
+	 //% subcategory=OLED
      export function showStringWithNewLine(text: string): void {
         console.log("display: " + text);
         return;
@@ -81,7 +76,7 @@ namespace MicroMaker {
     //% block="show (without newline)|number %number" blockGap=8
     //% async 
     //% shim=OLED::showNumberWithoutNewLine
-	//% subcategory=Innovation
+	//% subcategory=OLED
     export function showNumberNoNewLine(number: number): void {
         console.log("display: " + number);
         return;
@@ -95,7 +90,7 @@ namespace MicroMaker {
     //% block="show|number %number" blockGap=8
     //% async 
     //% shim=OLED::showNumberWithNewLine
-	//% subcategory=Innovation
+	//% subcategory=OLED
     export function showNumberWithNewLine(number: number): void {
         console.log("display: " + number);
         return;
