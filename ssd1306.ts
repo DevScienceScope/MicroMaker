@@ -1,5 +1,5 @@
 //% color=#27b0ba weight=100 icon="\uf26c"
-namespace OLED {
+namespace MicroMaker {
 
     /**
      * initialises the i2c OLED display
@@ -12,6 +12,7 @@ namespace OLED {
     //% block="initialize OLED with height %height|width %width|orentation %orentation"
     //% icon="\uf1ec" 
     //% shim=OLED::init_terminal
+	//% group="OLED"
     export function init(height: number, width: number, orentation: number): void {
         return;
     }
@@ -23,6 +24,7 @@ namespace OLED {
     //% block="insert newline"
     //% async
     //% shim=OLED::NextLine
+	//% group="OLED"
     export function nextLine(): void {
         return;
     }
@@ -34,6 +36,7 @@ namespace OLED {
     //% block="clear OLED display"
     //% icon="\uf1ec" 
     //% shim=OLED::clearDisplay
+	//% group="OLED"
     export function clear(): void {
         return;
     }
@@ -47,6 +50,7 @@ namespace OLED {
      //% blockId=oled_print_stringNoNewLine
      //% icon="\uf1ec"
      //% shim=OLED::showStringNoNewLine
+	 //% group="OLED"
      export function showStringNoNewLine(text: string): void {
         console.log("display: " + text);
         return;
@@ -61,6 +65,7 @@ namespace OLED {
      //% blockId=oled_print_stringWithNewLine
      //% icon="\uf1ec"
      //% shim=OLED::showStringWithNewLine
+	 //% group="OLED"
      export function showStringWithNewLine(text: string): void {
         console.log("display: " + text);
         return;
@@ -75,6 +80,7 @@ namespace OLED {
     //% block="show (without newline)|number %number" blockGap=8
     //% async 
     //% shim=OLED::showNumberWithoutNewLine
+	//% group="OLED"
     export function showNumberNoNewLine(number: number): void {
         console.log("display: " + number);
         return;
@@ -88,6 +94,7 @@ namespace OLED {
     //% block="show|number %number" blockGap=8
     //% async 
     //% shim=OLED::showNumberWithNewLine
+	//% group="OLED"
     export function showNumberWithNewLine(number: number): void {
         console.log("display: " + number);
         return;
