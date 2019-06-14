@@ -23,7 +23,7 @@ namespace MicroMaker {
      */
     //% blockId=oled_init_terminal
     //% weight=100
-    //% block="initialize OLED with height %height|width %width|orentation %orentation"
+    //% block="initialize OLED Flipped with height %height|width %width|orentation %orentation"
     //% icon="\uf1ec" 
     //% shim=OLED::init_terminal_flipped
 	//% subcategory=OLED
