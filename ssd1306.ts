@@ -12,7 +12,7 @@ namespace MicroMaker {
     //% block="initialize OLED with height %height|width %width|orentation %orentation"
     //% icon="\uf1ec" 
     //% shim=OLED::init_terminal
-	//% group="OLED"
+	//% subcategory=Innovation
     export function init(height: number, width: number, orentation: number): void {
         return;
     }
@@ -24,7 +24,7 @@ namespace MicroMaker {
     //% block="insert newline"
     //% async
     //% shim=OLED::NextLine
-	//% group="OLED"
+	//% subcategory=Innovation
     export function nextLine(): void {
         return;
     }
@@ -36,7 +36,7 @@ namespace MicroMaker {
     //% block="clear OLED display"
     //% icon="\uf1ec" 
     //% shim=OLED::clearDisplay
-	//% group="OLED"
+	//% subcategory=Innovation
     export function clear(): void {
         return;
     }
@@ -50,7 +50,7 @@ namespace MicroMaker {
      //% blockId=oled_print_stringNoNewLine
      //% icon="\uf1ec"
      //% shim=OLED::showStringNoNewLine
-	 //% group="OLED"
+	 //% subcategory=Innovation
      export function showStringNoNewLine(text: string): void {
         console.log("display: " + text);
         return;
@@ -65,7 +65,7 @@ namespace MicroMaker {
      //% blockId=oled_print_stringWithNewLine
      //% icon="\uf1ec"
      //% shim=OLED::showStringWithNewLine
-	 //% group="OLED"
+	 //% subcategory=Innovation
      export function showStringWithNewLine(text: string): void {
         console.log("display: " + text);
         return;
@@ -80,7 +80,7 @@ namespace MicroMaker {
     //% block="show (without newline)|number %number" blockGap=8
     //% async 
     //% shim=OLED::showNumberWithoutNewLine
-	//% group="OLED"
+	//% subcategory=Innovation
     export function showNumberNoNewLine(number: number): void {
         console.log("display: " + number);
         return;
@@ -94,7 +94,7 @@ namespace MicroMaker {
     //% block="show|number %number" blockGap=8
     //% async 
     //% shim=OLED::showNumberWithNewLine
-	//% group="OLED"
+	//% subcategory=Innovation
     export function showNumberWithNewLine(number: number): void {
         console.log("display: " + number);
         return;
