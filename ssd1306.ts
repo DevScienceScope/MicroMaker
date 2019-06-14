@@ -14,7 +14,7 @@ namespace MicroMaker {
     //% shim=OLED::init_terminal
 	//% subcategory=Innovation Foundation
 	//% group="OLED"
-    export function init(height: number, width: number, orentation: number): void {
+    export function init(height: number, width: number): void {
         return;
     }
     /**
