@@ -1,9 +1,7 @@
 //% color=#27b0ba weight=100 icon="\uf26c"
 namespace MicroMaker {
 	
-	function init(height: number, width: number): void {
-        return;
-    }
+	
 
    /**
      * initialises the i2c OLED display
@@ -18,8 +16,8 @@ namespace MicroMaker {
     //% shim=OLED::init_terminal
 	//% subcategory=Innovation
 	//% group="OLED"
-    export function initlise(height: number, width: number): void {
-        init(height, number);
+    export function init(height: number, width: number): void {
+        return;
     }
     /**
      *Prints Next Line
@@ -33,7 +31,6 @@ namespace MicroMaker {
     export function nextLine(): void {
         return;
     }
-	
 /**
      * clears the screen.
      */
