@@ -24,7 +24,7 @@ namespace MicroMaker {
     //% block="insert newline"
     //% async
     //% shim=OLED::NextLine
-	//% subcategory=Innovation
+	//% subcategory=Innovation,Investigation
     export function nextLine(): void {
         return;
     }
@@ -50,7 +50,7 @@ namespace MicroMaker {
      //% blockId=oled_print_stringNoNewLine
      //% icon="\uf1ec"
      //% shim=OLED::showStringNoNewLine
-	 //% subcategory=Innovation
+	 //% subcategory=Innovation,Investigation
      export function showStringNoNewLine(text: string): void {
         console.log("display: " + text);
         return;
