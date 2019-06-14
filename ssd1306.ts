@@ -1,6 +1,11 @@
 //% color=#27b0ba weight=100 icon="\uf26c"
 namespace MicroMaker {
 
+	function init(height: number, width: number): void {
+        return;
+    }
+
+
     /**
      * initialises the i2c OLED display
      * @param height height (in pixels), eg: 64
@@ -12,10 +17,10 @@ namespace MicroMaker {
     //% block="initialize OLED with height %height|width %width|orentation %orentation"
     //% icon="\uf1ec" 
     //% shim=OLED::init_terminal
-	//% subcategory=Innovation Foundation
+	//% subcategory=Innovation
 	//% group="OLED"
-    export function init(height: number, width: number): void {
-        return;
+    export function initlise(height: number, width: number): void {
+        init(height, number);
     }
     /**
      *Prints Next Line
