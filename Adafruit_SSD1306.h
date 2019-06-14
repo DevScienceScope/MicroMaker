@@ -96,7 +96,26 @@ class Adafruit_SSD1306_I2c : public Adafruit_SSD1306
 {
 public:
 	#define SSD_I2C_ADDRESS     0x78
-	//int set_orentation = 0;
+	/** Create a SSD1306 I2C transport display driver instance with the specified I2C address, as well as the display dimensions
+	 *
+	 * Required parameters
+	 * @param i2c - A reference to an initialized I2C object
+	 *
+	 * Optional parameters
+	 * @param i2cAddress - The i2c address of the display
+	 * @param rawHeight - The vertical number of pixels for the display, defaults to 32
+	 * @param rawWidth - The horizonal number of pixels for the display, defaults to 128
+	 */
+	Adafruit_SSD1306_I2c(MicroBitI2C i2c, uint8_t i2cAddress = SSD_I2C_ADDRESS, uint8_t rawHeight = 32, uint8_t rawWidth = 128)
+	    : Adafruit_SSD1306(rawHeight, rawWidth)
+	    , mi2c(i2c)
+	    , mi2cAddress(i2cAddress)
+	    {
+		    begin();
+		    //splash();
+		    display();
+	    };
+	
 	/** Create a SSD1306 I2C transport display driver instance with the specified I2C address, as well as the display dimensions
 	 *
 	 * Required parameters
@@ -108,16 +127,6 @@ public:
 	 * @param rawWidth - The horizonal number of pixels for the display, defaults to 128
 	 * @param rawOrentation - THe orentation of the display, defaults to 0
 	 */
-	Adafruit_SSD1306_I2c(MicroBitI2C i2c, uint8_t i2cAddress = SSD_I2C_ADDRESS, uint8_t rawHeight = 32, uint8_t rawWidth = 128)
-	    : Adafruit_SSD1306(rawHeight, rawWidth)
-	    , mi2c(i2c)
-	    , mi2cAddress(i2cAddress)
-	    {
-		    begin();
-		    //splash();
-		    display();
-	    };
-		
 	Adafruit_SSD1306_I2c(MicroBitI2C i2c, uint8_t i2cAddress = SSD_I2C_ADDRESS, uint8_t rawHeight = 32, uint8_t rawWidth = 128, uint8_t flipped = 1)
 	    : Adafruit_SSD1306(rawHeight, rawWidth)
 	    , mi2c(i2c)
