@@ -29,14 +29,20 @@ namespace MicroMaker {
 		pin9 = 9,
 	}
 	
-	//% weight=100 blockId="Temperature_probe" 
-    //% block="|%p| Temperature_probe "
-    //% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
-	//% subcategory=Temperature Probe
-    export function TemperatureNumber(p: adc): number {
-        // Fake function for simulator
-        return Temperature(p)/100
-    }
+	//% weight=95
+    //% blockId=get_moisture
+    //% block="Get Moisture| %number" blockGap=8
+	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
+	//% subcategory=Moisture
+	export function getMoisture(p: adc){
+		let moisture = pins.map(pins.analogReadPin(p),
+			0,
+			1023,
+			0,
+			100
+		)
+		return Math.round(moisture)
+	}
 	
    /**
      * initialises the i2c OLED display
@@ -134,24 +140,9 @@ namespace MicroMaker {
         return;
     }
 	
-    //% weight=95
-    //% blockId=get_moisture
-    //% block="|number %number" blockGap=8
-	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
-	//% subcategory=Moisture
-	export function getMoisture(p: adc){
-		let moisture = pins.map(pins.analogReadPin(p),
-			0,
-			1023,
-			0,
-			100
-		)
-		return Math.round(moisture)
-	}
-	
 	//% weight=95
     //% blockId=get_sound
-    //% block="get Sound dB|number %number" blockGap=8
+    //% block="Get Sound dB| %number" blockGap=8
 	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
 	//% subcategory=Sound
 	export function getSound(p: adc){
@@ -159,4 +150,13 @@ namespace MicroMaker {
 		let soundDB = 0.3133 * soundRaw - 7.5104
 		return Math.round(soundDB)
 	}
+	
+	//% weight=100 blockId="Temperature_probe" 
+    //% block="|%p| Temperature_probe "
+    //% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
+	//% subcategory=Temperature Probe
+    export function TemperatureNumber(p: adc): number {
+        // Fake function for simulator
+        return Temperature(p)/100
+    }
 }
