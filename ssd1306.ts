@@ -31,7 +31,7 @@ namespace MicroMaker {
 	
 	//% weight=95
     //% blockId=get_moisture
-    //% block="Get Moisture| %number" blockGap=8
+    //% block="Get Moisture|%p|" blockGap=8
 	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
 	//% subcategory=Moisture
 	export function getMoisture(p: adc){
@@ -142,7 +142,7 @@ namespace MicroMaker {
 	
 	//% weight=95
     //% blockId=get_sound
-    //% block="Get Sound dB| %number" blockGap=8
+    //% block="Get Sound dB|%p|" blockGap=8
 	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
 	//% subcategory=Sound
 	export function getSound(p: adc){
@@ -151,8 +151,8 @@ namespace MicroMaker {
 		return Math.round(soundDB)
 	}
 	
-	//% weight=100 blockId="Temperature_probe" 
-    //% block="|%p| Temperature_probe "
+	//% weight=95 blockId="Temperature_probe" 
+    //% block="Get Temperature |%p|"
     //% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
 	//% subcategory=Temperature Probe
     export function TemperatureNumber(p: adc): number {
