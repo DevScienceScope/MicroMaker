@@ -14,7 +14,7 @@ namespace MicroMaker {
 		//% block=pin4
 		pin4 = 4,
 		//% block=pin10
-		pin10 = 10,
+		pin10 = 10
     }
 	
 	//enum for digital powered pins only
@@ -26,7 +26,7 @@ namespace MicroMaker {
 		//% block=pin8
 		pin8 = 8,
 		//% block=pin12
-		pin9 = 9,
+		pin9 = 9
 	}
 	
 	//% weight=95
