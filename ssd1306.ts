@@ -116,7 +116,7 @@ namespace MicroMaker {
 		let soundDB = 0.3133 * soundRaw - 7.5104;
 		return Math.round(soundDB);
 	}
-	/*
+	
 	//% weight=95
 	//% blockId="Temperature_probe" 
     //% block="Get Temperature |%p|"
@@ -126,7 +126,7 @@ namespace MicroMaker {
         // Fake function for simulator
         return Temperature(p)/100;
     }
-	*/
+	
 	//% weight=95
     //% blockId=get_moisture
     //% block="Get Moisture|%p|" blockGap=8
