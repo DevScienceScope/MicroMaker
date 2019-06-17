@@ -8,26 +8,8 @@ namespace MicroMaker {
 		//% block=pin1
 		pin1 = 1,	   
 		//% block=pin2
-		pin2 = 2,	   
-		//% block=pin3
-		pin3 = 3,	   
-		//% block=pin4
-		pin4 = 4,
-		//% block=pin10
-		pin10 = 10
+		pin2 = 2
     }
-	
-	//enum for digital powered pins only
-	export enum dio {
-		//% block=pin6
-		pin6 = 6,	   
-		//% block=pin7
-		pin7 = 7,	   
-		//% block=pin8
-		pin8 = 8,
-		//% block=pin12
-		pin9 = 9
-	}
 	
    /**
      * initialises the i2c OLED display
@@ -129,7 +111,7 @@ namespace MicroMaker {
     //% block="Get Sound dB|%p|" blockGap=8
 	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
 	//% subcategory=Sound
-	export function getSound(p: adc){
+	export function getSound(p: AnalogPin){
 		let soundRaw = pins.analogReadPin(p);
 		let soundDB = 0.3133 * soundRaw - 7.5104;
 		return Math.round(soundDB);
@@ -150,7 +132,7 @@ namespace MicroMaker {
     //% block="Get Moisture|%p|" blockGap=8
 	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
 	//% subcategory=Moisture
-	export function getMoisture(p: adc){
+	export function getMoisture(p: AnalogPin){
 		let moisture = pins.map(pins.analogReadPin(p),
 			0,
 			1023,
