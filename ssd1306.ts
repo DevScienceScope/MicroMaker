@@ -1,5 +1,43 @@
-//% color=#27b0ba weight=100 icon="\uf26c"
+//% color=#2096ba weight=100 icon="\uf0c3"
 namespace MicroMaker {
+	
+	//enum for ADc pins only
+	export enum adc {
+		//% block=pin0
+		pin0 = 0,	   
+		//% block=pin1
+		pin1 = 1,	   
+		//% block=pin2
+		pin2 = 2,	   
+		//% block=pin3
+		pin3 = 3,	   
+		//% block=pin4
+		pin4 = 4,
+		//% block=pin10
+		pin10 = 10,
+    }
+	
+	//enum for digital powered pins only
+	export enum dio {
+		//% block=pin6
+		pin6 = 6,	   
+		//% block=pin7
+		pin7 = 7,	   
+		//% block=pin8
+		pin8 = 8,
+		//% block=pin12
+		pin9 = 9,
+	}
+	
+	//% weight=100 blockId="Temperature_probe" 
+    //% block="|%p| Temperature_probe "
+    //% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
+	//% subcategory=Temperature Probe
+    export function TemperatureNumber(p: adc): number {
+        // Fake function for simulator
+        return Temperature(p)/100
+    }
+	
    /**
      * initialises the i2c OLED display
      * @param height height (in pixels), eg: 64
@@ -7,7 +45,7 @@ namespace MicroMaker {
      */
     //% blockId=oled_init_terminal
     //% weight=100
-    //% block="initialize OLED with height %height|width %width|orentation %orentation"
+    //% block="initialize OLED with height %height|width %width"
     //% icon="\uf1ec" 
     //% shim=OLED::init_terminal
 	//% subcategory=OLED
@@ -91,7 +129,34 @@ namespace MicroMaker {
     //% shim=OLED::showNumberWithNewLine
 	//% subcategory=OLED
     export function showNumberWithNewLine(number: number): void {
+
         console.log("display: " + number);
         return;
     }
+	
+    //% weight=95
+    //% blockId=get_moisture
+    //% block="|number %number" blockGap=8
+	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
+	//% subcategory=Moisture
+	export function getMoisture(p: adc){
+		let moisture = pins.map(pins.analogReadPin(p),
+			0,
+			1023,
+			0,
+			100
+		)
+		return Math.round(moisture)
+	}
+	
+	//% weight=95
+    //% blockId=get_sound
+    //% block="get Sound dB|number %number" blockGap=8
+	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
+	//% subcategory=Sound
+	export function getSound(p: adc){
+		let soundRaw = pins.analogReadPin(p)
+		let soundDB = 0.3133 * soundRaw - 7.5104
+		return Math.round(soundDB)
+	}
 }
