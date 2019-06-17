@@ -29,21 +29,6 @@ namespace MicroMaker {
 		pin9 = 9
 	}
 	
-	//% weight=95
-    //% blockId=get_moisture
-    //% block="Get Moisture|%p|" blockGap=8
-	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
-	//% subcategory=Moisture
-	export function getMoisture(p: adc){
-		let moisture = pins.map(pins.analogReadPin(p),
-			0,
-			1023,
-			0,
-			100
-		)
-		return Math.round(moisture)
-	}
-	
    /**
      * initialises the i2c OLED display
      * @param height height (in pixels), eg: 64
@@ -135,7 +120,6 @@ namespace MicroMaker {
     //% shim=OLED::showNumberWithNewLine
 	//% subcategory=OLED
     export function showNumberWithNewLine(number: number): void {
-
         console.log("display: " + number);
         return;
     }
@@ -146,17 +130,33 @@ namespace MicroMaker {
 	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
 	//% subcategory=Sound
 	export function getSound(p: adc){
-		let soundRaw = pins.analogReadPin(p)
-		let soundDB = 0.3133 * soundRaw - 7.5104
-		return Math.round(soundDB)
+		let soundRaw = pins.analogReadPin(p);
+		let soundDB = 0.3133 * soundRaw - 7.5104;
+		return Math.round(soundDB);
 	}
 	
-	//% weight=95 blockId="Temperature_probe" 
+	//% weight=95
+	//% blockId="Temperature_probe" 
     //% block="Get Temperature |%p|"
     //% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
 	//% subcategory=Temperature Probe
     export function TemperatureNumber(p: adc): number {
         // Fake function for simulator
-        return Temperature(p)/100
+        return Temperature(p)/100;
     }
+	
+	//% weight=95
+    //% blockId=get_moisture
+    //% block="Get Moisture|%p|" blockGap=8
+	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
+	//% subcategory=Moisture
+	export function getMoisture(p: adc){
+		let moisture = pins.map(pins.analogReadPin(p),
+			0,
+			1023,
+			0,
+			100
+		);
+		return Math.round(moisture);
+	}
 }
