@@ -242,7 +242,7 @@ namespace MicroMaker {
     //% blockId=set_servo_speed
     //% block="Set Servo Speed|%p|" blockGap=8
 	//% subcategory=Servo
-	export function setServoAngle(p: number){
+	export function setServoSpeed(p: number){
 		let light = pins.map(pins.analogReadPin(p),
 			0,
 			1023,
