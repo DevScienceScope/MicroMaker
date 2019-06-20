@@ -150,7 +150,7 @@ namespace MicroMaker {
 	
 	//% weight=95
     //% blockId=get_light_percent
-    //% block="Get Light %|%p|" blockGap=8
+    //% block="Get Light Percent|%p|" blockGap=8
 	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
 	//% subcategory=Light
 	export function getLightPercent(p: AnalogPin){
