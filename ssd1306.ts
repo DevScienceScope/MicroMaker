@@ -127,7 +127,7 @@ namespace MicroMaker {
 	//% blockId="Temperature_probe" 
     //% block="Get Temperature |%p|"
     //% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
-	//% subcategory=Temperature Probe
+	//% subcategory=Temperature-Probe
     export function TemperatureNumber(p: adc): number {
         // Fake function for simulator
         return Temperature(p)/100;
