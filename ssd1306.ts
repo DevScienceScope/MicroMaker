@@ -242,23 +242,17 @@ namespace MicroMaker {
     //% block="Set Servo Angle|%p|" blockGap=8
 	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
 	//% subcategory=Servo
-	export function setServoAngle(p: AnalogPin){
-		let light = pins.map(pins.analogReadPin(p),
-			0,
-			1023,
-			0,
-			100
-		);
-		return Math.round(light);
+	export function setServoAngle(p: AnalogPin): void {
+
 	}
 	
 	//% weight=95
     //% blockId=set_servo_speed
     //% block="Set Servo Speed|%p|" blockGap=8
 	//% subcategory=Servo
-	export function setServoSpeed(p: number){
+	export function setServoSpeed(p: number): void {
 		
-		return 1;
+
 	}
 	
 	/*******************Timing Gates*******************/
@@ -267,14 +261,8 @@ namespace MicroMaker {
     //% block="Set Gate 1|%p|" blockGap=8
 	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
 	//% subcategory=Lightgate
-	export function setGate1(p: AnalogPin){
-		let light = pins.map(pins.analogReadPin(p),
-			0,
-			1023,
-			0,
-			100
-		);
-		return Math.round(light);
+	export function setGate1(p: AnalogPin): void {
+
 	}
 	
 	//% weight=95
@@ -282,32 +270,26 @@ namespace MicroMaker {
     //% block="Set Gate 2|%p|" blockGap=8
 	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
 	//% subcategory=Lightgate
-	export function setGate2(p: AnalogPin){
-		let light = pins.map(pins.analogReadPin(p),
-			0,
-			1023,
-			0,
-			100
-		);
-		return Math.round(light);
+	export function setGate2(p: AnalogPin): void {
+
 	}
 	
 	//% weight=95
     //% blockId=set_object_length
     //% block="Set object length cm|%p|" blockGap=8
 	//% subcategory=Lightgate
-	export function setObjectLength(p: number){
+	export function setObjectLength(p: number): void {
 		
-		return 1;
+
 	}
 	
 	//% weight=95
     //% blockId=set_gate_distance
     //% block="Set gate distance cm|%p|" blockGap=8
 	//% subcategory=Lightgate
-	export function setGateDistance(p: number){
+	export function setGateDistance(p: number): void {
 		
-		return 1;
+
 	}
 	
 	//% weight=95
