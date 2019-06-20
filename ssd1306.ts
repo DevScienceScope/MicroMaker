@@ -147,4 +147,79 @@ namespace MicroMaker {
 		);
 		return Math.round(moisture);
 	}
+	
+	//% weight=95
+    //% blockId=get_light_percent
+    //% block="Get Light %|%p|" blockGap=8
+	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
+	//% subcategory=Light
+	export function getLightPercent(p: AnalogPin){
+		let light = pins.map(pins.analogReadPin(p),
+			0,
+			1023,
+			0,
+			100
+		);
+		return Math.round(light);
+	}
+	
+	//% weight=95
+    //% blockId=get_light_lux
+    //% block="Get Light lux|%p|" blockGap=8
+	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
+	//% subcategory=Light
+	export function getLightLux(p: AnalogPin){
+		let light = pins.map(pins.analogReadPin(p),
+			0,
+			1023,
+			0,
+			100
+		);
+		return Math.round(light);
+	}
+	
+	//% weight=95
+    //% blockId=get_temperature
+    //% block="Get temperature C|%p|" blockGap=8
+	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
+	//% subcategory=Temperature
+	export function getTemperature(p: AnalogPin){
+		let light = pins.map(pins.analogReadPin(p),
+			0,
+			1023,
+			0,
+			100
+		);
+		return Math.round(light);
+	}
+	
+	//% weight=95
+    //% blockId=get_joystick_x
+    //% block="Get joystick X|%p|" blockGap=8
+	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
+	//% subcategory=Joystick
+	export function getJoystickX(p: AnalogPin){
+		let light = pins.map(pins.analogReadPin(p),
+			0,
+			1023,
+			0,
+			100
+		);
+		return Math.round(light);
+	}
+	
+	//% weight=95
+    //% blockId=get_joystick_y
+    //% block="Get joystick Y|%p|" blockGap=8
+	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
+	//% subcategory=Joystick
+	export function getJoystickY(p: AnalogPin){
+		let light = pins.map(pins.analogReadPin(p),
+			0,
+			1023,
+			0,
+			100
+		);
+		return Math.round(light);
+	}
 }
