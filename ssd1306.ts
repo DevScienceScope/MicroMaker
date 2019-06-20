@@ -222,4 +222,33 @@ namespace MicroMaker {
 		);
 		return Math.round(light);
 	}
+	
+	//% weight=95
+    //% blockId=set_servo_angle
+    //% block="Set Servo Angle|%p|" blockGap=8
+	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
+	//% subcategory=Servo
+	export function setServoAngle(p: AnalogPin){
+		let light = pins.map(pins.analogReadPin(p),
+			0,
+			1023,
+			0,
+			100
+		);
+		return Math.round(light);
+	}
+	
+	//% weight=95
+    //% blockId=set_servo_speed
+    //% block="Set Servo Speed|%p|" blockGap=8
+	//% subcategory=Servo
+	export function setServoAngle(p: number){
+		let light = pins.map(pins.analogReadPin(p),
+			0,
+			1023,
+			0,
+			100
+		);
+		return Math.round(light);
+	}
 }
