@@ -242,8 +242,8 @@ namespace MicroMaker {
     //% block="Set Servo Angle|%p|" blockGap=8
 	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
 	//% subcategory=Servo
-	export function setServoAngle(p: AnalogPin): void {
-
+	export function setServoAngle(p: AnalogPin){
+		return;
 	}
 	
 	//% weight=95
@@ -251,8 +251,7 @@ namespace MicroMaker {
     //% block="Set Servo Speed|%p|" blockGap=8
 	//% subcategory=Servo
 	export function setServoSpeed(p: number): void {
-		
-
+		return;
 	}
 	
 	/*******************Timing Gates*******************/
@@ -262,7 +261,7 @@ namespace MicroMaker {
 	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
 	//% subcategory=Lightgate
 	export function setGate1(p: AnalogPin): void {
-
+		return;
 	}
 	
 	//% weight=95
@@ -271,7 +270,7 @@ namespace MicroMaker {
 	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
 	//% subcategory=Lightgate
 	export function setGate2(p: AnalogPin): void {
-
+		return;	
 	}
 	
 	//% weight=95
@@ -279,8 +278,7 @@ namespace MicroMaker {
     //% block="Set object length cm|%p|" blockGap=8
 	//% subcategory=Lightgate
 	export function setObjectLength(p: number): void {
-		
-
+		return;
 	}
 	
 	//% weight=95
@@ -288,8 +286,7 @@ namespace MicroMaker {
     //% block="Set gate distance cm|%p|" blockGap=8
 	//% subcategory=Lightgate
 	export function setGateDistance(p: number): void {
-		
-
+		return;
 	}
 	
 	//% weight=95
