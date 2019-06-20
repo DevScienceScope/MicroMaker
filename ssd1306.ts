@@ -11,6 +11,13 @@ namespace MicroMaker {
 		pin2 = 2
     }
 	
+	export enum gates {
+		gate1 = 1,
+		gate2 = 2,
+		total = 3
+	}
+	
+	/*******************OLED*******************/	
    /**
      * initialises the i2c OLED display
      * @param height height (in pixels), eg: 64
@@ -106,6 +113,7 @@ namespace MicroMaker {
         return;
     }
 	
+	/*******************Sound*******************/	
 	//% weight=95
     //% blockId=get_sound
     //% block="Get Sound dB|%p|" blockGap=8
@@ -117,6 +125,7 @@ namespace MicroMaker {
 		return Math.round(soundDB);
 	}
 	
+	/*******************Temperature Probe*******************/	
 	//% shim=DS18B20::Temperature
     export function Temperature(p: number): number {
         // Fake function for simulator
@@ -133,6 +142,7 @@ namespace MicroMaker {
         return Temperature(p)/100;
     }
 	
+	/*******************moisture*******************/	
 	//% weight=95
     //% blockId=get_moisture
     //% block="Get Moisture|%p|" blockGap=8
@@ -148,6 +158,7 @@ namespace MicroMaker {
 		return Math.round(moisture);
 	}
 	
+	/*******************Light Basic*******************/	
 	//% weight=95
     //% blockId=get_light_percent
     //% block="Get Light Percent|%p|" blockGap=8
@@ -178,6 +189,7 @@ namespace MicroMaker {
 		return Math.round(light);
 	}
 	
+	/*******************Temperature Basic*******************/	
 	//% weight=95
     //% blockId=get_temperature
     //% block="Get temperature C|%p|" blockGap=8
@@ -193,6 +205,7 @@ namespace MicroMaker {
 		return Math.round(light);
 	}
 	
+	/*******************Joystick*******************/	
 	//% weight=95
     //% blockId=get_joystick_x
     //% block="Get joystick X|%p|" blockGap=8
@@ -223,6 +236,7 @@ namespace MicroMaker {
 		return Math.round(light);
 	}
 	
+	/*******************Servo*******************/	
 	//% weight=95
     //% blockId=set_servo_angle
     //% block="Set Servo Angle|%p|" blockGap=8
@@ -243,6 +257,17 @@ namespace MicroMaker {
     //% block="Set Servo Speed|%p|" blockGap=8
 	//% subcategory=Servo
 	export function setServoSpeed(p: number){
+		
+		return 1;
+	}
+	
+	/*******************Timing Gates*******************/
+	//% weight=95
+    //% blockId=set_gate_1
+    //% block="Set Gate 1|%p|" blockGap=8
+	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
+	//% subcategory=Lightgate
+	export function setGate1(p: AnalogPin){
 		let light = pins.map(pins.analogReadPin(p),
 			0,
 			1023,
@@ -251,4 +276,67 @@ namespace MicroMaker {
 		);
 		return Math.round(light);
 	}
+	
+	//% weight=95
+    //% blockId=set_gate_2
+    //% block="Set Gate 2|%p|" blockGap=8
+	//% p.fieldEditor="gridpicker" p.fieldOptions.columns=3
+	//% subcategory=Lightgate
+	export function setGate2(p: AnalogPin){
+		let light = pins.map(pins.analogReadPin(p),
+			0,
+			1023,
+			0,
+			100
+		);
+		return Math.round(light);
+	}
+	
+	//% weight=95
+    //% blockId=set_object_length
+    //% block="Set object length cm|%p|" blockGap=8
+	//% subcategory=Lightgate
+	export function setObjectLength(p: number){
+		
+		return 1;
+	}
+	
+	//% weight=95
+    //% blockId=set_gate_distance
+    //% block="Set gate distance cm|%p|" blockGap=8
+	//% subcategory=Lightgate
+	export function setGateDistance(p: number){
+		
+		return 1;
+	}
+	
+	//% weight=95
+    //% blockId=get_velocity
+    //% block="Get velocity m/s|%p|" blockGap=8
+	//% subcategory=Lightgate
+	export function getVelocity(p: gates){
+		
+		return 1;
+	}
+	
+	//% weight=95
+    //% blockId=get_time
+    //% block="Get time ms|%p|" blockGap=8
+	//% subcategory=Lightgate
+	export function getTime(p: gates){
+		
+		return 1;
+	}
+	
+	//% weight=95
+    //% blockId=get_acceleration
+    //% block="get_acceleration m/s2" blockGap=8
+	//% subcategory=Lightgate
+	export function getAcceleration(){
+		
+		return 1;
+	}
+	
+	
+
 }
