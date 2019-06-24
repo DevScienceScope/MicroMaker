@@ -18,6 +18,7 @@ namespace MicroMaker {
 	}
 	
 	/*******************OLED*******************/	
+	
    /**
      * initialises the i2c OLED display
      * @param height height (in pixels), eg: 64
@@ -142,7 +143,8 @@ namespace MicroMaker {
         return Temperature(p)/100;
     }
 	
-	/*******************moisture*******************/	
+	/*
+		
 	//% weight=95
     //% blockId=get_moisture
     //% block="Get Moisture|%p|" blockGap=8
@@ -158,7 +160,7 @@ namespace MicroMaker {
 		return Math.round(moisture);
 	}
 	
-	/*******************Light Basic*******************/	
+	
 	//% weight=95
     //% blockId=get_light_percent
     //% block="Get Light Percent|%p|" blockGap=8
@@ -189,7 +191,7 @@ namespace MicroMaker {
 		return Math.round(light);
 	}
 	
-	/*******************Temperature Basic*******************/	
+		
 	//% weight=95
     //% blockId=get_temperature
     //% block="Get temperature C|%p|" blockGap=8
@@ -205,7 +207,7 @@ namespace MicroMaker {
 		return Math.round(light);
 	}
 	
-	/*******************Joystick*******************/	
+		
 	//% weight=95
     //% blockId=get_joystick_x
     //% block="Get joystick X|%p|" blockGap=8
@@ -236,7 +238,7 @@ namespace MicroMaker {
 		return Math.round(light);
 	}
 	
-	/*******************Servo*******************/	
+		
 	//% weight=95
     //% blockId=set_servo_angle
     //% block="Set Servo Angle|%p|" blockGap=8
@@ -254,7 +256,7 @@ namespace MicroMaker {
 		return;
 	}
 	
-	/*******************Timing Gates*******************/
+	
 	//% weight=95
     //% blockId=set_gate_1
     //% block="Set Gate 1|%p|" blockGap=8
@@ -316,6 +318,6 @@ namespace MicroMaker {
 		return 1;
 	}
 	
-	
+	*/
 
 }
