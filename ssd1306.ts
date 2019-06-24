@@ -126,13 +126,6 @@ namespace MicroMaker {
 		return Math.round(soundDB);
 	}
 	
-	/*******************Temperature Probe*******************/	
-	//% shim=DS18B20::Temperature
-    export function Temperature(p: number): number {
-        // Fake function for simulator
-        return 0
-    }
-	
 	//% weight=95
 	//% blockId="Temperature_probe" 
     //% block="Get Temperature |%p|"
@@ -141,6 +134,13 @@ namespace MicroMaker {
     export function TemperatureNumber(p: adc): number {
         // Fake function for simulator
         return Temperature(p)/100;
+    }
+	
+	/*******************Temperature Probe*******************/	
+	//% shim=DS18B20::Temperature
+    export function Temperature(p: number): number {
+        // Fake function for simulator
+        return 0
     }
 	
 	/*
