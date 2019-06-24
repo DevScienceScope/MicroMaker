@@ -140,7 +140,7 @@ namespace MicroMaker {
 	//% shim=DS18B20::Temperature
     export function Temperature(p: number): number {
         // Fake function for simulator
-        return 0
+        return 0;
     }
 	
 	/*
