@@ -11,12 +11,6 @@ namespace MicroMaker {
 		pin2 = 2
     }
 	
-	export enum gates {
-		gate1 = 1,
-		gate2 = 2,
-		total = 3
-	}
-	
 	/*******************OLED*******************/	
 	
    /**
@@ -114,7 +108,7 @@ namespace MicroMaker {
         return;
     }
 	
-	/*******************Sound*******************/	
+	/*
 	//% weight=95
     //% blockId=get_sound
     //% block="Get Sound dB|%p|" blockGap=8
@@ -126,7 +120,6 @@ namespace MicroMaker {
 		return Math.round(soundDB);
 	}
 	
-	/*
 	//% weight=95
 	//% blockId="Temperature_probe" 
     //% block="Get Temperature |%p|"
